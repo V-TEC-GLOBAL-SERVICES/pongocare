@@ -1,0 +1,1128 @@
+/* ============================================
+   PONGOS CARE — Autocuidado & Identidade
+   Estética: Natural, Mel, Terra, Jovem e Iluminada
+   ============================================ */
+
+:root {
+  /* Paleta Pongos Care (Baseada nas fotografias) */
+  --bg-main:     #FDFBF7; /* Branco creme / Puro */
+  --bg-soft:     #F4EFE6; /* Bege claro / Aveia */
+  --bg-mid:      #E6DFD3; /* Tom de areia */
+  
+  --text-main:   #3A2A1A; /* Castanho escuro / Terra */
+  --text-muted:  #756353; /* Castanho suave */
+  
+  --honey:       #E88D14; /* Laranja vibrante do rótulo Pongos */
+  --honey-bright:#FFB340; /* Amarelo mel / Textura do esfoliante */
+  --honey-deep:  #B36605; /* Tom de mel escuro / Sombra */
+  
+  --nature-green:#6B7A54; /* Verde das folhas (detalhe) */
+  --sky-blue:    #A3C4D9; /* Azul do céu na foto do sabonete (detalhe) */
+
+  --line:        rgba(58, 42, 26, 0.15);
+  --line-soft:   rgba(58, 42, 26, 0.08);
+
+  /* Tipografia - Mantida a estrutura, mas mais orgânica no contexto claro */
+  --display:  "Italiana", "Times New Roman", serif;
+  --classic:  "Cinzel", serif;
+  --body:     "Libre Caslon Text", Georgia, serif;
+
+  /* Espaços */
+  --gutter:  clamp(1.5rem, 3vw, 3rem);
+  --max:     1280px;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 400;
+  /* Um brilho suave e quente no fundo */
+  background-image:
+    radial-gradient(ellipse at top right, rgba(255, 179, 64, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(107, 122, 84, 0.06) 0%, transparent 50%);
+    
+}
+
+/* ---------- TOPBAR ---------- */
+
+.topbar {
+  background: var(--honey);
+  padding: 0.6rem 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+.topbar p {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+  animation: marquee-slow 40s linear infinite;
+  font-weight: 600;
+}
+
+@keyframes marquee-slow {
+  from { transform: translateX(15%); }
+  to   { transform: translateX(-15%); }
+}
+
+/* ---------- NAV ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.2rem var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__left,
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__right {
+  justify-content: flex-end;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav__links a,
+.nav__right a {
+  font-family: var(--classic);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav__links a:hover,
+.nav__right a:hover {
+  color: var(--honey);
+}
+
+.nav__menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav__menu span {
+  width: 22px;
+  height: 2px;
+  background: var(--text-main);
+}
+
+.nav__bag span {
+  color: var(--honey);
+  margin: 0 0.3rem;
+}
+
+.nav__brand {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav__brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--honey-bright) 0%, var(--honey) 100%);
+  color: #FFFFFF;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: normal;
+  box-shadow: 0 4px 15px -5px rgba(232, 141, 20, 0.4);
+}
+
+.nav__brand-mark--lg {
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+}
+
+.nav__brand-name {
+  font-family: var(--classic);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(4rem, 9vw, 8rem) var(--gutter);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 179, 64, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ornamentos nos cantos - mais orgânicos */
+.hero__ornaments {
+  position: absolute;
+  inset: clamp(1.5rem, 3vw, 3rem);
+  pointer-events: none;
+}
+
+.ornament {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--honey);
+  opacity: 0.5;
+  border-radius: 8px; /* Arredondado para ser menos "rígido" */
+}
+
+.ornament--tl { top: 0; left: 0; border-width: 2px 0 0 2px; border-top-left-radius: 16px; }
+.ornament--tr { top: 0; right: 0; border-width: 2px 2px 0 0; border-top-right-radius: 16px;}
+.ornament--bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; border-bottom-left-radius: 16px;}
+.ornament--br { bottom: 0; right: 0; border-width: 0 2px 2px 0; border-bottom-right-radius: 16px;}
+
+/* selo central */
+.hero__crest {
+  width: 110px;
+  height: 110px;
+  color: var(--honey);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  animation: crest-rotate 60s linear infinite;
+}
+
+@keyframes crest-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero__eyebrow {
+  font-family: var(--classic);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--honey-deep);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-family: var(--display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__line--italic {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--honey-bright) 0%, var(--honey) 50%, var(--honey-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 0.2em;
+}
+
+.hero__lede {
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.1rem 2.2rem;
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  border-radius: 30px; /* Botões mais amigáveis e jovens */
+}
+
+.btn--gold {
+  background: linear-gradient(135deg, var(--honey-bright) 0%, var(--honey) 100%);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 8px 20px -6px rgba(232, 141, 20, 0.5);
+}
+
+.btn--gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -6px rgba(232, 141, 20, 0.6);
+}
+
+.btn--ghost {
+  border: 2px solid var(--honey);
+  color: var(--honey-deep);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  background: var(--honey-soft); /* Uma cor que não definimos, vamos usar a variável directa */
+  background: rgba(232, 141, 20, 0.1);
+  color: var(--honey-deep);
+}
+
+/* ---------- PRESTIGE ---------- */
+
+.prestige {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  padding: 3rem 0;
+}
+
+.prestige__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.prestige__item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.prestige__num {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--honey);
+}
+
+.prestige__label {
+  font-family: var(--classic);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.prestige__divider {
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+}
+
+/* ---------- CABEÇALHO DE SEÇÃO ---------- */
+
+.section-head {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-marker {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--honey-deep);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.section-marker--gold {
+  color: var(--honey);
+}
+
+.section-head h2,
+.invite h2,
+.maison__text h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.section-head h2 em,
+.invite h2 em,
+.maison__text h2 em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--honey-bright) 0%, var(--honey-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-head p {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ---------- COLEÇÃO (PRODUTOS) ---------- */
+
+.collection {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background: #FFFFFF; /* Fundo puro para destacar os produtos */
+}
+
+.collection__grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 2rem;
+}
+
+.parfum {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-main);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px; /* Cantos arredondados */
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.parfum:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(58, 42, 26, 0.15);
+  border-color: rgba(232, 141, 20, 0.3);
+}
+
+.parfum:hover .parfum__bottle {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.parfum--feature {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.parfum__visual {
+  position: relative;
+  flex: 1;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.parfum--feature .parfum__visual {
+  min-height: 500px;
+}
+
+/* Cenários para cada tipo de produto (Inspirados nas fotos) */
+.parfum__visual--ambre { /* Esfoliante Mel */
+  background: 
+    radial-gradient(circle at 50% 50%, #FFF5E6 0%, #FDFBF7 80%);
+}
+
+.parfum__visual--cristal { /* Sabonete e Céu/Folhas */
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(163, 196, 217, 0.2) 0%, transparent 60%), /* sky blue */
+    radial-gradient(circle at 80% 80%, rgba(107, 122, 84, 0.15) 0%, transparent 60%); /* leaf green */
+}
+
+.parfum__visual--bronze { /* Infoprodutos */
+  background: 
+    radial-gradient(circle at 50% 50%, #F4EFE6 0%, #FDFBF7 80%);
+}
+
+.parfum__visual--noir { /* Merchandising */
+  background: 
+    radial-gradient(circle at 50% 50%, #FFF0D4 0%, #FDFBF7 80%);
+}
+
+/* Moldando os "Frascos" em Boiões, Sabonetes e Afins */
+.parfum__bottle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.parfum__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 -5px 15px rgba(0,0,0,0.05),
+    0 15px 25px -10px rgba(58, 42, 26, 0.2);
+}
+
+/* Boião de Esfoliante */
+.parfum__bottle--ambre .parfum__body {
+  width: 140px;
+  height: 110px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FFB340 0%, #E88D14 50%, #B36605 100%);
+  border-top: 15px solid #3A2A1A; /* Tampa castanha escura */
+}
+
+/* Barra de Sabonete */
+.parfum__bottle--cristal .parfum__body {
+  width: 130px;
+  height: 85px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FDFBF7 0%, #F4EFE6 50%, #E6DFD3 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  /* Cinta de papel à volta do sabonete */
+  position: relative;
+}
+.parfum__bottle--cristal .parfum__body::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 35px; right: 35px;
+  background: #E88D14; /* Cinta laranja */
+  z-index: -1;
+}
+
+/* Livro / Ebook */
+.parfum__bottle--bronze .parfum__body {
+  width: 110px;
+  height: 150px;
+  border-radius: 4px 12px 12px 4px;
+  background: linear-gradient(135deg, #3A2A1A 0%, #2A1A0A 100%);
+  border-left: 8px solid #E88D14; /* Lombada */
+}
+
+/* Caixa / Merch */
+.parfum__bottle--noir .parfum__body {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: #FDFBF7;
+  border: 2px dashed var(--honey);
+}
+
+/* Ajustes de tamanho para o destaque */
+.parfum--feature .parfum__bottle--ambre .parfum__body {
+  width: 180px;
+  height: 140px;
+  border-top-width: 20px;
+}
+
+.parfum__monogram {
+  font-family: var(--display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.parfum__bottle--cristal .parfum__monogram,
+.parfum__bottle--noir .parfum__monogram {
+  color: var(--text-main);
+}
+
+.parfum--feature .parfum__monogram {
+  font-size: 3.5rem;
+}
+
+.parfum__num-label {
+  font-family: var(--classic);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.parfum__bottle--cristal .parfum__num-label,
+.parfum__bottle--noir .parfum__num-label {
+  color: var(--text-muted);
+}
+
+.parfum__info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #FFFFFF;
+}
+
+.parfum__roman {
+  font-family: var(--classic);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--honey-deep);
+  text-transform: uppercase;
+}
+
+.parfum__info h3 {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.parfum--feature .parfum__info h3 {
+  font-size: 2.2rem;
+}
+
+.parfum__notes {
+  font-size: 0.95rem;
+  color: var(--honey-deep);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.parfum__desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.parfum__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1.2rem;
+  margin-top: auto;
+  border-top: 1px solid var(--line-soft);
+}
+
+.parfum__link {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.parfum__link:hover {
+  color: var(--honey);
+  gap: 12px;
+}
+
+/* ---------- PROPOSTA DE VALOR (SAVOIR) ---------- */
+
+.savoir {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background: var(--bg-soft);
+  position: relative;
+}
+
+.savoir__grid {
+  max-width: var(--max);
+  margin: 0 auto 5rem;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.savoir__card {
+  padding: 2.5rem 2rem;
+  background: #FFFFFF;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.4s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid var(--line-soft);
+}
+
+.savoir__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(232, 141, 20, 0.1);
+  border-color: var(--honey);
+}
+
+.savoir__card:hover .savoir__num {
+  color: var(--honey);
+  transform: scale(1.1);
+}
+
+.savoir__num {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--honey-bright);
+  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--bg-soft);
+  width: 40%;
+  transition: all 0.4s;
+}
+
+.savoir__card h3 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.savoir__card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.savoir__quote {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.savoir__quote p {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+.savoir__quote p em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--honey);
+}
+
+/* ---------- VISÃO (MAISON) ---------- */
+
+.maison {
+  padding: clamp(6rem, 10vw, 10rem) 0;
+  background: #FFFFFF;
+}
+
+.maison__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.maison__visual {
+  display: grid;
+  place-items: center;
+}
+
+.frame {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  padding: 14px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow:
+    0 20px 50px -10px rgba(232, 141, 20, 0.15),
+    0 0 0 1px var(--line-soft);
+  transform: rotate(-3deg); /* Toque descontraído/fotográfico */
+  transition: transform 0.5s ease;
+}
+
+.frame:hover {
+  transform: rotate(0deg);
+}
+
+.frame__inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #FFB340 0%, #E88D14 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.frame__monogram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.frame__monogram span {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8rem;
+  color: #FFFFFF;
+  line-height: 0.9;
+  text-shadow: 0 10px 20px rgba(179, 102, 5, 0.3);
+}
+
+.frame__monogram small {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  background: rgba(58, 42, 26, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+}
+
+.maison__text h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.maison__text .section-marker {
+  text-align: left;
+}
+
+.maison__text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+}
+
+.maison__link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--classic);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--honey-deep);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--honey);
+  transition: all 0.3s;
+}
+
+.maison__link:hover {
+  color: var(--honey);
+  padding-bottom: 0.2rem;
+}
+
+/* ---------- CAMPANHAS (PRESS) ---------- */
+
+.press {
+  padding: 4rem 0;
+  background: var(--honey); /* Faixa vibrante */
+  overflow: hidden;
+}
+
+.press__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.press__label {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.press__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.press__logos span:nth-child(even) {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+/* ---------- CONVITE / PROGRAMA JOVEM ---------- */
+
+.invite {
+  padding: clamp(6rem, 10vw, 10rem) var(--gutter);
+  text-align: center;
+  position: relative;
+  background: var(--bg-soft);
+}
+
+.invite__ornament {
+  font-size: 2.5rem;
+  color: var(--honey);
+  margin-bottom: 1rem;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.15); }
+}
+
+.invite__eyebrow {
+  font-family: var(--classic);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--honey-deep);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.invite p {
+  max-width: 38rem;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.invite__form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  background: #FFFFFF;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -10px rgba(58, 42, 26, 0.1);
+  border: 1px solid var(--line-soft);
+}
+
+.invite__form input {
+  flex: 1;
+  padding: 1.2rem 1.8rem;
+  font-family: var(--body);
+  font-size: 1rem;
+  color: var(--text-main);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.invite__form input::placeholder {
+  color: rgba(117, 99, 83, 0.5);
+}
+
+.invite__form button {
+  padding: 1.2rem 2rem;
+  background: var(--text-main); /* Botão escuro para contraste */
+  color: #FFFFFF;
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.invite__form button:hover {
+  background: var(--honey);
+}
+
+.invite small {
+  font-family: var(--classic);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  background: #FFFFFF;
+  padding: 5rem 0 2rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.footer__top {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer__name {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-top: 0.5rem;
+}
+
+.footer__tag {
+  font-size: 0.95rem;
+  color: var(--honey-deep);
+}
+
+.footer__col h4 {
+  font-family: var(--classic);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 1.4rem;
+}
+
+.footer__col a {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+
+.footer__col a:hover {
+  color: var(--honey);
+  transform: translateX(4px);
+}
+
+.footer__bottom {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.footer__line {
+  width: 100%;
+  height: 1px;
+  background: var(--line-soft);
+  margin-bottom: 2rem;
+}
+
+.footer__meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__meta p {
+  font-family: var(--classic);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.footer__meta p em {
+  font-family: var(--body);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  color: var(--honey-deep);
+}
