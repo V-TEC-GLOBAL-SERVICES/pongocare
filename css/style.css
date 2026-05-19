@@ -52,6 +52,8 @@ body {
   padding: 0.6rem 0;
   overflow: hidden;
   border-bottom: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .topbar p {
@@ -683,9 +685,13 @@ body {
 
 .parfum__link:hover {
   color: var(--honey);
-  gap: 12px;
-}
+  gap: 12px;}
 
+  img {
+  width: auto; 
+  height: auto;
+  border: 2px solid #ccc; 
+}
 /* ---------- PROPOSTA DE VALOR (SAVOIR) ---------- */
 
 .savoir {
