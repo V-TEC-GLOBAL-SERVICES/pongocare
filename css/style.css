@@ -83,6 +83,14 @@ body {
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--line);
 }
+.nav__brand-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--honey-bright) 0%, var(--honey) 100%);
+  padding: 4px;
+}
 
 .nav__inner {
   max-width: var(--max);
@@ -334,50 +342,219 @@ body {
 /* ---------- PRESTIGE ---------- */
 
 .prestige {
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-  padding: 3rem 0;
-}
-
-.prestige__inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  align-items: center;
-  gap: 2rem;
-}
-
-.prestige__item {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.prestige__num {
-  font-family: var(--display);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--honey);
-}
-
-.prestige__label {
-  font-family: var(--classic);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.prestige__divider {
-  width: 1px;
-  height: 40px;
-  background: var(--line);
-}
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      padding: 3rem 0;
+    }
+ 
+    .prestige__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+ 
+    .prestige__item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+ 
+    .prestige__item:hover {
+      transform: translateY(-2px);
+    }
+ 
+    .prestige__header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: center;
+    }
+ 
+    .prestige__num {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--honey);
+      transition: color 0.3s ease;
+    }
+ 
+    .prestige__label {
+      font-family: var(--classic);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+ 
+    .prestige__item.active .prestige__label {
+      color: var(--honey);
+    }
+ 
+    .prestige__toggle {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.4rem;
+      transition: transform 0.3s ease;
+    }
+ 
+    .prestige__item.active .prestige__toggle {
+      transform: rotate(180deg);
+    }
+ 
+    .prestige__toggle svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--honey);
+      stroke-width: 2;
+      fill: none;
+    }
+ 
+    .prestige__dropdown {
+      position: absolute;
+      top: calc(100% + 0.8rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid var(--line-soft);
+      border-radius: 4px;
+      padding: 1.2rem;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+ 
+    .prestige__item.active .prestige__dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+ 
+    .prestige__dropdown-content {
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+ 
+    .prestige__dropdown-title {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--honey);
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+ 
+    .prestige__dropdown-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+ 
+    .prestige__dropdown-text:last-child {
+      margin-bottom: 0;
+    }
+ 
+    .prestige__divider {
+      width: 1px;
+      height: 40px;
+      background: var(--line);
+    }
+ 
+    /* Responsive */
+    @media (max-width: 768px) {
+      .prestige__inner {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+ 
+      .prestige__divider {
+        display: none;
+      }
+ 
+      .prestige__dropdown {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        transition: all 0.3s ease;
+      }
+ 
+      .prestige__item.active .prestige__dropdown {
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        padding: 1.2rem;
+        border: 1px solid var(--line-soft);
+        border-top: none;
+        margin-top: 0;
+      }
+ 
+      .prestige {
+        padding: 2rem 0;
+      }
+ 
+      .prestige__num {
+        font-size: 1.4rem;
+      }
+ 
+      .prestige__label {
+        font-size: 0.7rem;
+      }
+    }
+ 
+    /* Tooltip arrow para desktop */
+    .prestige__dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+ 
+    .prestige__item.active .prestige__dropdown::before {
+      opacity: 1;
+      visibility: visible;
+    }
+ 
+    @media (max-width: 768px) {
+      .prestige__dropdown::before {
+        display: none;
+      }
+    }
 
 /* ---------- CABEÇALHO DE SEÇÃO ---------- */
 
@@ -485,7 +662,29 @@ body {
   padding: 3rem;
   overflow: hidden;
 }
+.parfum__visual--image-bg {
+  background: var(--bg-main);
+  padding: 0;
+  min-height: 320px;
+  overflow: hidden;
+}
 
+.parfum--feature .parfum__visual--image-bg {
+  min-height: 500px;
+}
+
+.parfum__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ Ocupa todo o espaço, recortando a imagem */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Efeito de zoom ao passar o rato */
+.parfum:hover .parfum__image {
+  transform: scale(1.05);
+}
 .parfum--feature .parfum__visual {
   min-height: 500px;
 }
@@ -541,7 +740,42 @@ body {
   background: linear-gradient(135deg, #FFB340 0%, #E88D14 50%, #B36605 100%);
   border-top: 15px solid #3A2A1A; /* Tampa castanha escura */
 }
+.parfum__bottle,
+.parfum__body,
+.parfum__monogram,
+.parfum__num-label {
+  display: none; /* Esconde os frascos ilustrados */
+}
 
+/* Novo estilo para imagens em full */
+.parfum__visual--image-bg {
+  background: var(--bg-soft);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.parfum__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Efeito ao passar o rato */
+.parfum:hover .parfum__image {
+  transform: scale(1.08);
+}
+
+/* Garantir altura mínima */
+.parfum__visual {
+  min-height: 320px;
+}
+
+.parfum--feature .parfum__visual {
+  min-height: 500px;
+}
 /* Barra de Sabonete */
 .parfum__bottle--cristal .parfum__body {
   width: 130px;
@@ -1057,7 +1291,13 @@ body {
   flex-direction: column;
   gap: 0.8rem;
 }
-
+.footer__brand-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+}
 .footer__name {
   font-family: var(--display);
   font-size: 1.8rem;

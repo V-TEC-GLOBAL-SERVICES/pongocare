@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PONGOS CARE</title>
   <meta name="description" content="Cosméticos naturais que constroem autoestima e identidade." />
- 
+  <link rel="icon" type="image/png" href="imagens/pongofavicon.png" />
+  <link rel="apple-touch-icon" href="imagens/pongofavicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cinzel:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -33,10 +34,10 @@
         </nav>
       </div>
 
-      <a href="imagens/Logo Pongos 2.png" class="nav__brand">
-        <span class="nav__brand-mark">PC</span>
-        <span class="nav__brand-name">Pongos Care</span>
-      </a>
+   <a href="#home" class="nav__brand">
+  <img src="imagens/pongofavicon.png" alt="Pongos Care Logo" class="nav__brand-image" />
+  <span class="nav__brand-name">Pongos Care</span>
+</a>
 
       <div class="nav__right">
         <a href="#">Comunidade</a>
@@ -85,117 +86,162 @@
     </div>
   </section>
 
-  <section class="prestige">
+    <section class="prestige">
     <div class="prestige__inner">
-      <div class="prestige__item">
-        <span class="prestige__num">100%</span>
-        <span class="prestige__label">Pele e Propósito</span>
+      <div class="prestige__item" data-dropdown="1">
+        <div class="prestige__header">
+          <span class="prestige__num">100%</span>
+          <span class="prestige__label">Pele e Propósito</span>
+          <div class="prestige__toggle">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="prestige__dropdown">
+          <div class="prestige__dropdown-content">
+            <div class="prestige__dropdown-title">Compromisso Total</div>
+            <div class="prestige__dropdown-text">Dedicamos 100% do nosso empenho à saúde da sua pele e ao propósito de revelar a sua beleza natural.</div>
+            <div class="prestige__dropdown-text">Cada produto é formulado com ingredientes selecionados especificamente para respeitar a sua epiderme.</div>
+          </div>
+        </div>
       </div>
+ 
       <div class="prestige__divider"></div>
-      <div class="prestige__item">
-        <span class="prestige__num">B2C</span>
-        <span class="prestige__label">Natural como tu es</span>
+ 
+      <div class="prestige__item" data-dropdown="2">
+        <div class="prestige__header">
+          <span class="prestige__num">B2C</span>
+          <span class="prestige__label">Natural como tu es</span>
+          <div class="prestige__toggle">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="prestige__dropdown">
+          <div class="prestige__dropdown-content">
+            <div class="prestige__dropdown-title">Conexão Direta</div>
+            <div class="prestige__dropdown-text">Relacionamo-nos diretamente consigo, sem intermediários. A nossa abordagem B2C permite uma comunicação honesta e transparente.</div>
+            <div class="prestige__dropdown-text">Os seus comentários moldam os nossos produtos e a nossa missão.</div>
+          </div>
+        </div>
       </div>
+ 
       <div class="prestige__divider"></div>
-      <div class="prestige__item">
-        <span class="prestige__num">12 a 30</span>
-        <span class="prestige__label">Jovens Pongos </span>
+ 
+      <div class="prestige__item" data-dropdown="3">
+        <div class="prestige__header">
+          <span class="prestige__num">12 a 30</span>
+          <span class="prestige__label">Jovens Pongos</span>
+          <div class="prestige__toggle">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="prestige__dropdown">
+          <div class="prestige__dropdown-content">
+            <div class="prestige__dropdown-title">Idade Ideal</div>
+            <div class="prestige__dropdown-text">Os nossos produtos são especialmente concebidos para a pele jovem, entre os 12 e os 30 anos.</div>
+            <div class="prestige__dropdown-text">Uma fase crucial de transição onde a sua pele merece cuidados únicos e eficazes.</div>
+          </div>
+        </div>
       </div>
+ 
       <div class="prestige__divider"></div>
-      <div class="prestige__item">
-        <span class="prestige__num">AO</span>
-        <span class="prestige__label">Cultura Local </span>
+ 
+      <div class="prestige__item" data-dropdown="4">
+        <div class="prestige__header">
+          <span class="prestige__num">AO</span>
+          <span class="prestige__label">Cultura Local</span>
+          <div class="prestige__toggle">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="prestige__dropdown">
+          <div class="prestige__dropdown-content">
+            <div class="prestige__dropdown-title">Raízes Angolanas</div>
+            <div class="prestige__dropdown-text">Somos orgulhosamente angolanos. A nossa identidade, valores e inspiração nascem da riqueza cultural de Angola.</div>
+            <div class="prestige__dropdown-text">Cada produto conta uma história da nossa terra e do nosso povo.</div>
+          </div>
+        </div>
       </div>
-    </div><!--Adicionar dropdown-->
+    </div>
   </section>
-
+ 
   <section class="collection" id="produtos">
-    <div class="section-head">
-      <span class="section-marker">— Nossas soluçoes —</span>
-      <h2>A <em>Linha</em> de Autocuidado</h2>
-      <p>Oferecemos uma linha de produtos para cuidados da pele</p>
-    </div>
+  <div class="section-head">
+    <span class="section-marker">— Nossas soluçoes —</span>
+    <h2>A <em>Linha</em> de Autocuidado</h2>
+    <p>Oferecemos uma linha de produtos para cuidados da pele</p>
+  </div>
 
-    <div class="collection__grid">
-      <article class="parfum parfum--feature">
-        <div class="parfum__visual parfum__visual--ambre">
-          <div class="parfum__bottle parfum__bottle--ambre">
-            <div class="parfum__body">
-              <span class="parfum__monogram">H</span>
-              <span class="parfum__num-label">Hidratante</span>
-            </div>
-          </div>
+  <div class="collection__grid">
+    <!-- PRODUTO 1: HIDRATANTE (DESTAQUE) -->
+    <article class="parfum parfum--feature">
+      <div class="parfum__visual parfum__visual--image-bg">
+        <img src="imagens/WhatsApp Image 2026-05-12 at 12.39.59 PM.jpeg" alt="Hidratante Pongos" class="parfum__image" />
+      </div>
+      <div class="parfum__info">
+        <span class="parfum__roman">Linha Limpeza</span>
+        <h3>Hidratante</h3>
+        <p class="parfum__notes">Textura de açúcar, aveia</p>
+        <p class="parfum__desc">Proporciona hidratação, nutrição e suavidade na pele...</p>
+        <div class="parfum__bottom">
+          <a href="#" class="parfum__link">Comprar Agora →</a>
         </div>
-        <div class="parfum__info">
-          <span class="parfum__roman">Linha Limpeza</span>
-          <h3>Hidratante </h3>
-          <p class="parfum__notes">Textura de açúcar, aveia </p>
-          <p class="parfum__desc">Proporciona hidratação, nutrição e suavidade na pele, ajudando na ilumininação e uniformização do tom de pele. </p>
-          <div class="parfum__bottom">
-            <a href="#" class="parfum__link">Comprar Agora →</a>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="parfum">
-        <div class="parfum__visual parfum__visual--cristal">
-          <div class="parfum__bottle parfum__bottle--cristal">
-            <div class="parfum__body">
-              <span class="parfum__monogram">S</span>
-              <img src="imagens/78b4dd87-b459-4238-a7aa-530345138676.jpeg" alt="imagem de sabonete"/>
-              <span class="parfum__num-label">Sabonete</span>
-            </div>
-          </div>
+    <!-- PRODUTO 2: SABONETE -->
+    <article class="parfum">
+      <div class="parfum__visual parfum__visual--image-bg">
+        <img src="imagens/78b4dd87-b459-4238-a7aa-530345138676.jpeg "alt="Sabonete Pongos" class="parfum__image" />
+      </div>
+      <div class="parfum__info">
+        <span class="parfum__roman">Linha Limpeza</span>
+        <h3>Sabonete Natural</h3>
+        <p class="parfum__notes">Coco, camomila, enxofre</p>
+        <div class="parfum__bottom">
+          <a href="#" class="parfum__link">Comprar Agora →</a>
         </div>
-        <div class="parfum__info">
-          <span class="parfum__roman">Linha Limpeza</span>
-          <h3>Sabonete Natural </h3>
-          <p class="parfum__notes">Coco, camomila, enxofre </p>
-          <div class="parfum__bottom">
-            <a href="#" class="parfum__link">Comprar Agora →</a>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="parfum">
-        <div class="parfum__visual parfum__visual--bronze">
-          <div class="parfum__bottle parfum__bottle--bronze">
-            <div class="parfum__body">
-              <span class="parfum__monogram">S</span>
-              <span class="parfum__num-label">Serum</span>
-            </div>
-          </div>
+    <!-- PRODUTO 3: SERUM -->
+    <article class="parfum">
+      <div class="parfum__visual parfum__visual--image-bg">
+        <img src="imagens/WhatsApp Image 2026-05-12 at 12.40.01 PM.jpeg" alt="Sérum Pongos" class="parfum__image" />
+      </div>
+      <div class="parfum__info">
+        <span class="parfum__roman">LINHA DE LIMPEZA</span>
+        <h3>Serum</h3>
+        <p class="parfum__notes">Autocuidado, nutrição e bem estar</p>
+        <div class="parfum__bottom">
+          <a href="#" class="parfum__link">Acessar Conteúdo →</a>
         </div>
-        <div class="parfum__info">
-          <span class="parfum__roman"> LINHA DE LIMPEZA</span>
-          <h3>Serum</h3>
-          <p class="parfum__notes">Autocuidado, nutrição e bem estar </p>
-          <div class="parfum__bottom">
-            <a href="#" class="parfum__link">Acessar Conteúdo →</a>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="parfum">
-        <div class="parfum__visual parfum__visual--noir">
-          <div class="parfum__bottle parfum__bottle--noir">
-            <div class="parfum__body">
-              <span class="parfum__monogram">M</span>
-              <span class="parfum__num-label">Merchandising</span>
-            </div>
-          </div>
+    <!-- PRODUTO 4: MERCHANDISING -->
+    <article class="parfum">
+      <div class="parfum__visual parfum__visual--image-bg">
+        <img src="imagens/78b4dd87-b459-4238-a7aa-530345138676.jpeg" alt="Merchandising Pongos" class="parfum__image" />
+      </div>
+      <div class="parfum__info">
+        <span class="parfum__roman">Estilo Pessoal</span>
+        <h3>Utensílios da Marca</h3>
+        <p class="parfum__notes">Frases inspiradoras, T-shirts, Bonés</p>
+        <div class="parfum__bottom">
+          <a href="#" class="parfum__link">Explorar →</a>
         </div>
-        <div class="parfum__info">
-          <span class="parfum__roman">Estilo Pessoal</span>
-          <h3>Utensílios da Marca </h3>
-          <p class="parfum__notes">Frases inspiradoras, T-shirts, Bonés </p>
-          <div class="parfum__bottom">
-            <a href="#" class="parfum__link">Explorar →</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
+      </div>
+    </article>
+  </div>
+</section>
 
   <section class="savoir" id="identidade">
     <div class="section-head section-head--light">
@@ -260,11 +306,11 @@
 
   <footer class="footer">
     <div class="footer__top">
-      <div class="footer__brand">
-        <div class="nav__brand-mark nav__brand-mark--lg">PC</div>
-        <p class="footer__name">Pongos Care</p>
-        <p class="footer__tag"><em>Cosméticos Naturais &middot; Huambo </em></p>
-      </div>
+    <div class="footer__brand">
+  <img src="imagens/Logo Pongos 2.png" alt="Pongos Care Logo" class="footer__brand-logo" />
+  <p class="footer__name">Pongos Care</p>
+  <p class="footer__tag"><em>Cosméticos Naturais &middot; Huambo </em></p>
+</div>
 
       <div class="footer__col">
         <h4>A Marca</h4>
@@ -306,6 +352,6 @@
       </div>
     </div>
   </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
